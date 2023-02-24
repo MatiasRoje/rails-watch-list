@@ -1,0 +1,29 @@
+#btn-show {
+  background-color: #fab005;
+  color: #fff;
+  border-radius: 11px;
+  transition: all 0.3s;
+}
+
+#btn-show:hover {
+  background-color: #f59f00;
+}
+
+.btn-back {
+  display: flex;
+  padding: 10px 30px;
+  border-radius: 11px;
+  background-color: #ff6b6b;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.btn-back:hover {
+  background-color: #fa5252;
+  color: #fff;
+}
+
+.list-header-buttons {
+  display: flex;
+  gap: 10px;
+}

@@ -1,14 +1,39 @@
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-</nav>
+<div class="navbar-mine">
+<%= link_to "Home", lists_path %>
+</div>
 
-<div class="grid">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @list.url %>);">
+  <div class="container">
+    <h1><%= @list.name %></h1>
+    <p>Moving subtitle</p>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="list-header">
+  <div class="list-header-h2"><h2>My lists</h2></div>
+  <div class="list-header-buttons">
+  <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-flat", id: "btn-show" %>
+  <%= link_to "Back", lists_path, class: "btn btn-back" %>
+  </div>
+</div>
+
+<div class="grid-four-col cards-display">
 <% @bookmarks.each do |bookmark| %>
   <% if @list.id == bookmark.list_id %>
-    <h3><%= bookmark.movie.title %></h3>
-    <p><%= bookmark.movie.rating %></p>
-    <h6><%= bookmark.movie.overview %></h6>
-    <p><%= bookmark.comment %>
+    <div class="card">
+      <img src="https://image.tmdb.org/t/p/original<%= bookmark.movie.poster_url %>" class="card-img" alt="Movie-category">
+      <div class="card-content" id="card-movie-content">
+        <div id="card-title-and-rating">
+        <h3><%= bookmark.movie.title %></h3>
+        <p><%= bookmark.movie.rating %></p>
+        </div>
+        <h6 id="card-overview"><%= bookmark.movie.overview %></h6>
+        <div id="card-comment"><div class="fa-regular fa-comment"></div><div><p><%= bookmark.comment %></p></div></div>
+      </div>
+   </div>
   <% end %>
 <% end %>
+</div>
 </div>

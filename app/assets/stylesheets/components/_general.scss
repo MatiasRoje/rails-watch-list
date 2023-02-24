@@ -9,10 +9,45 @@
   gap: 20px;
 }
 
-.lists-display {
-  margin-top: 30px;
+.grid-four-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 992px) {
+  .grid-four-col {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-four-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+.container-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cards-display {
+  margin-top: 40px;
 }
 
 a {
   text-decoration: none;
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.form-h2 {
+  margin-top: 40px;
+  margin-bottom: 20px;
 }

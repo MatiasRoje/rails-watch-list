@@ -1,6 +1,12 @@
-<h6>Add a new bookmark</h6>
+<div class="navbar-mine">
+<%= link_to "Home", lists_path %>
+</div>
+
+<div class="container-form">
+<h2 class="form-h2">Create a new bookmark:</h2>
 <%= simple_form_for [@list, @bookmark] do |f| %>
   <%= f.input :comment %>
   <%= f.association :movie %>
-  <%= f.button :submit %>
-<% end %>
+  <%= f.button :submit, class: "btn btn-back" %>
+  <% end %>
+</div>

@@ -1,0 +1,12 @@
+<div class="navbar-mine">
+<%= link_to "Home", lists_path %>
+</div>
+
+<div class="container-form">
+<h2 class="form-h2">Create a new list:</h2>
+<%= simple_form_for @list do |f| %>
+  <%= f.input :name %>
+  <%= f.input :url %>
+  <%= f.button :submit, class: "btn btn-back" %>
+<% end %>
+</div>
