@@ -1,0 +1,22 @@
+.card {
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.075);
+  border-radius: 11px;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.06);
+}
+
+.card-content {
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+  color: black;
+  justify-content: space-between;
+}
+
+#lists-movie-counter {
+}

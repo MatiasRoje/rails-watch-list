@@ -1,0 +1,34 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="navbar-logo"><img src="assets/images/logo.jpg" alt="cinema-logo"></div>
+  <div><a class="navbar-brand" href="#">Navbar</a></div>
+</nav>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80);">
+  <div class="container">
+    <h1>Create Your Movies Watch Lists</h1>
+    <p>Moving subtitle</p>
+    <%= link_to "New List", new_list_path, class: "btn btn-flat" %>
+  </div>
+</div>
+
+<div class="container lists-display">
+<div class="grid">
+<% @lists.each do |list| %>
+  <%= link_to list_path(list) do%>
+  <div class="card">
+    <img src="https://www.arthaus.de/material/personen/Goldrausch_003___bild_16zu9_20200413201903.jpg" class="card-img" alt="Movie-category">
+    <div class="card-content">
+      <p ><%= list.name %></p>
+      <% counter = 0 %>
+      <% @bookmarks.each do |bookmark| %>
+        <% if bookmark.id == list.id %>
+        <% counter += 1  %>
+        <% end  %>
+      <% end %>
+      <span id="lists-movie-counter"><%= counter %> movies</span>
+    </div>
+  </div>
+  <% end %>
+<% end %>
+</div>
+</div>

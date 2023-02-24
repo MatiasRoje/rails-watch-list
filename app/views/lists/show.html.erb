@@ -1,0 +1,14 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+</nav>
+
+<div class="grid">
+<% @bookmarks.each do |bookmark| %>
+  <% if @list.id == bookmark.list_id %>
+    <h3><%= bookmark.movie.title %></h3>
+    <p><%= bookmark.movie.rating %></p>
+    <h6><%= bookmark.movie.overview %></h6>
+    <p><%= bookmark.comment %>
+  <% end %>
+<% end %>
+</div>
